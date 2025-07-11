@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromPastes } from "../Redux/pasteSlice";
 import toast from "react-hot-toast";
-import { NavLink } from "react-router-dom";
-import { Calendar, Copy, Eye, PencilLine, Share2, Trash } from "lucide-react";
+import { Calendar, Copy, Eye, PencilLine, Trash } from "lucide-react";
 import { FormatDate } from "../utils/formatDate";
-
 
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
@@ -19,8 +17,6 @@ const Paste = () => {
   function handleDelete(pasteId) {
     dispatch(removeFromPastes(pasteId));
   }
-
-  
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -91,7 +87,6 @@ const Paste = () => {
                         size={20}
                       />
                     </button>
-
                   </div>
 
                   <div className="gap-x-2 flex flex-row justify-center items-center mt-1">

@@ -10,6 +10,16 @@ const ViewPaste = () => {
   const allPastes = useSelector((state) => state.paste.pastes);
   const paste = allPastes.filter((paste) => paste._id === id)[0];
 
+  if (!paste) {
+    return (
+      <div className="w-full h-full flex flex-col justify-center items-center">
+        <div className="text-red-500 mt-10 text-lg font-semibold">
+          Paste not found.
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className=" w-full h-full flex flex-col justify-center items-center">
       {/* Search Area */}
